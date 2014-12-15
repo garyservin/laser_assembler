@@ -67,7 +67,7 @@ add_dependencies(point_cloud2_assembler ${PROJECT_NAME}_gencpp)
 
 ## unit testing
 
-if(CATKIN_ENABLE_TESTING)
+if(CATKIN_ENABLE_TESTING AND NOT ANDROID)
   add_executable(periodic_snapshotter examples/periodic_snapshotter.cpp)
   target_link_libraries(periodic_snapshotter ${catkin_LIBRARIES} ${Boost_LIBRARIES})
   add_dependencies(periodic_snapshotter ${PROJECT_NAME}_gencpp)
